@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+  </head>
+  <body>
+    <div class="index"></div>
+    <script>
+    var template = "\
+    <div class='item' data-id='{id}'>\
+      <h4 class='title'>{title}</h4>\
+      <div class='body'>{body}</div>\
+      <a href='/user/{userId}'>view user</a>\
+    </div>\
+    ";
+    fetch( "https://jsonplaceholder.typicode.com/posts", {} )
+      .then( response => response.json() )
+      .then( ( json ) => {
+        json.forEach( ( item ) => {
+          $d.one( ".index" ).appendChild( $d.create( $a.template( template, item ) ) )
+        } );
+        return 1;
+      } )
+      .then( ( completed ) => {
+        console.log( "completed is ",completed ) ;
+      } );
+    </script>
+  </body>
+</html>

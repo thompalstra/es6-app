@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- <base href="../app/" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+    <script src="js/application.core.js"></script>
+    <script src="js/application.coredsdsaads.js"></script>
+    <title>My title</title>
+    <style>
+
+    </style>
+    <script>
+      document.addEventListener( "DOMContentLoaded", function( event ) {
+        if( navigator.onLine ){
+          $d.one( "#main" ).load( "./views/items/index.html" )
+          .then( ( response ) => {
+          } );
+        } else {
+          $d.one( "#main" ).load( "./offline.html" )
+          .then( ( response ) => {
+          } );
+        }
+      } );
+    </script>
+  </head>
+  <body>
+    <main id="main" role="main"></main>
+  </body>
+</html>
