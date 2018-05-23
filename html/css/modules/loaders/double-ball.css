@@ -1,0 +1,117 @@
+/* HORIZONTAL */
+
+.loader.double-ball{
+  width: 60px;
+  height: 60px;
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+}
+
+.loader.double-ball .ball{
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+}
+.loader.double-ball .ball:first-child{
+  animation: loaderDoubleBallHorizontalBallOne 1s infinite linear;
+}
+.loader.double-ball .ball:last-child{
+  animation: loaderDoubleBallHorizontalBallTwo 1s infinite linear;
+}
+@keyframes loaderDoubleBallHorizontalBallOne{
+  0% {
+    z-index: 1;
+    transform: translateX( 0 ) scale( 1 );
+  } 25% {
+    z-index: 1;
+    transform: translateX( 15px ) scale( .8 );
+  } 50% {
+    z-index: 1;
+    transform: translateX( 30px ) scale( 1 );
+  } 75% {
+    z-index: 1;
+    transform: translateX( 15px ) scale( 1.2 );
+  } 100% {
+    z-index: 1;
+    transform: translateX( 0 ) scale( 1 );
+  }
+}
+@keyframes loaderDoubleBallHorizontalBallTwo{
+  0% {
+    z-index: 1;
+    transform: translateX( 30px ) scale( 1 );
+  } 25% {
+    z-index: 1;
+    transform: translateX( 15px ) scale( 1.2 );
+  } 50% {
+    z-index: 1;
+    transform: translateX( 0px ) scale( 1 );
+  } 75% {
+    z-index: -1;
+    transform: translateX( 15px ) scale( .8 );
+  } 100% {
+    z-index: -1;
+    transform: translateX( 30px ) scale( 1 );
+  }
+}
+
+/* VERTICAL */
+.loader.double-ball.vertical .ball{
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+}
+.loader.double-ball.vertical .ball:first-child{
+  animation: loaderDoubleBallVerticalBallOne 1s infinite linear;
+}
+.loader.double-ball.vertical .ball:last-child{
+  animation: loaderDoubleBallVerticalBallTwo 1s infinite linear;
+}
+@keyframes loaderDoubleBallVerticalBallOne{
+  0% {
+    z-index: 1;
+    transform: translateY( 0 ) scale( 1 );
+  } 25% {
+    z-index: 1;
+    transform: translateY( 15px ) scale( .8 );
+  } 50% {
+    z-index: 1;
+    transform: translateY( 30px ) scale( 1 );
+  } 75% {
+    z-index: 1;
+    transform: translateY( 15px ) scale( 1.2 );
+  } 100% {
+    z-index: 1;
+    transform: translateY( 0 ) scale( 1 );
+  }
+}
+@keyframes loaderDoubleBallVerticalBallTwo{
+  0% {
+    z-index: 1;
+    transform: translateY( 30px ) scale( 1 );
+  } 25% {
+    z-index: 1;
+    transform: translateY( 15px ) scale( 1.2 );
+  } 50% {
+    z-index: 1;
+    transform: translateY( 0px ) scale( 1 );
+  } 75% {
+    z-index: -1;
+    transform: translateY( 15px ) scale( .8 );
+  } 100% {
+    z-index: -1;
+    transform: translateY( 30px ) scale( 1 );
+  }
+}

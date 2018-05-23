@@ -1,29 +1,22 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <!-- <base href="../app/" /> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
-    <script src="js/application.core.js"></script>
-    <script src="js/application.coredsdsaads.js"></script>
+    <script src="./html/js/core.js"></script>
+    <link rel="stylesheet" type="text/css" href="./html/css/collection.css">
     <title>My title</title>
-    <style>
 
-    </style>
+
     <script>
-      document.addEventListener( "DOMContentLoaded", function( event ) {
-        if( navigator.onLine ){
-          $d.one( "#main" ).load( "./views/items/index.html" )
-          .then( ( response ) => {
-          } );
-        } else {
-          $d.one( "#main" ).load( "./offline.html" )
-          .then( ( response ) => {
-          } );
-        }
+      document.addEventListener( "DOMContentLoaded", ( e ) => {
+          $b.load( ( navigator.onLine ) ? "./html/views/welcome.html" : "./html/views/offline.html" );
       } );
     </script>
   </head>
   <body>
-    <main id="main" role="main"></main>
+    <div class="loader double-ball" type="double-ball">
+      <div class="ball" style="background-color: #f5af41;"></div>
+      <div class="ball" style="background-color: #55d88d;"></div>
+    </div>
   </body>
 </html>

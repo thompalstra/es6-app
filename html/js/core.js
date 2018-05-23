@@ -5,6 +5,8 @@ let application = function() {
 let doc = document,
   $d = doc;
 
+let body, $b;
+
 let win = window,
   $w = win;
 
@@ -172,6 +174,6 @@ extend( Element, Node, Document ).with( {
   }
 } );
 
-$d.on( "DOMContentLoaded", ( originalEvent ) => {
-  $a.do( "ready", true );
+document.on( "DOMContentLoaded", ( originalEvent ) => {
+  $b = body = document.body;
 } );
