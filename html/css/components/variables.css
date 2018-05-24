@@ -1,0 +1,13 @@
+:root{
+  --action: #3498db; /*0% darken*/
+  --action-hover: #2892d8; /*5% darken*/
+  --action-active: #248acf; /*10% darken*/
+
+  --dark-transparent: transparent;
+  --dark-transparent-hover: rgba( 0,0,0,.010 );
+  --dark-transparent-active: rgba( 0,0,0, .030 );
+
+  --light-transparent: transparent;
+  --light-transparent-hover: rgba( 255,255,255,.010 );
+  --light-transparent-active: rgba( 255,255,255, .030 );
+}

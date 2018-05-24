@@ -1,0 +1,15 @@
+.toolbar{
+  box-sizing: border-box;
+  display: flex;
+  padding: 1rem;
+  margin: 0;
+}
+
+.toolbar.horizontal{
+  width: 100%;
+  flex-direction: row;
+}
+.toolbar.vertical{
+  height: 100%;
+  flex-direction: column;
+}
