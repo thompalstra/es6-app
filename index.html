@@ -2,16 +2,9 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
-    <script src="/html/js/core.js"></script>
-    <link rel="stylesheet" type="text/css" href="./html/css/collection.css">
+    <link href="/css/bundle.css" rel="stylesheet" type="text/css">
+    <script src="/js/bundle.js" type="module"></script>
     <title>My title</title>
-    <script>
-      document.addEventListener( "DOMContentLoaded", ( e ) => {
-        // setTimeout( ( e ) => {
-          $b.load( ( navigator.onLine ) ? "/html/views/welcome.html" : "/html/views/offline.html" );
-        // }, 1500 );
-      } );
-    </script>
   </head>
   <body>
     <div class="loader double-ball" type="double-ball">
