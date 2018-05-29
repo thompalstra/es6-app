@@ -1,0 +1,24 @@
+.pop{
+
+}
+.pop .popover{
+
+  position: absolute;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.pop:hover .popover{
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+}
+
+
+.pop.left .popover    { right: 100%; }
+.pop.center .popover  { left: 50%; transform: translateX( -50% ); }
+.pop.right .popover   { left: 100%; }
+.pop.top .popover     { bottom: 100%; }
+.pop.middle .popover  { top: 50%; transform: translateY( -50% ); }
+.pop.bottom .popover  { top: 100%; }

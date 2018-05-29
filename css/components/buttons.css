@@ -61,7 +61,7 @@
   color: var(--action);
 }
 .button-outlined.action{
-  border-color: #aaa;
+  border-color: rgba(102, 102, 102, .4);
   color: var(--action);
 }
 .button-round.action,
