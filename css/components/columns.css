@@ -5,6 +5,102 @@
 }
 .column{
   flex: 1;
-  height: 100%;
   box-sizing: border-box;
+}
+
+.column{
+  flex: 1;
+}
+
+[class^="cf-"]{
+  flex: 0 100%;
+}
+
+.cf-100{ flex: 0 100% }
+.cf-95{ flex: 0 95% }
+.cf-90{ flex: 0 90% }
+.cf-85{ flex: 0 85% }
+.cf-80{ flex: 0 80% }
+.cf-75{ flex: 0 75% }
+.cf-50{ flex: 0 50% }
+.cf-25{ flex: 0 25% }
+.cf-20{ flex: 0 20% }
+.cf-15{ flex: 0 15% }
+.cf-10{ flex: 0 10% }
+.cf-5{ flex: 0 5% }
+.cf-auto{ flex: 0 auto; }
+
+@media ( min-width: 480px ){
+  .container{ max-width: 400px; }
+}
+/* sm */
+@media ( min-width: 640px ){
+  .container{ max-width: 600px; }
+  .cf-sm-100{ flex: 0 100% }
+  .cf-sm-95{ flex: 0 95% }
+  .cf-sm-90{ flex: 0 90% }
+  .cf-sm-85{ flex: 0 85% }
+  .cf-sm-80{ flex: 0 80% }
+  .cf-sm-75{ flex: 0 75% }
+  .cf-sm-50{ flex: 0 50% }
+  .cf-sm-25{ flex: 0 25% }
+  .cf-sm-20{ flex: 0 20% }
+  .cf-sm-15{ flex: 0 15% }
+  .cf-sm-10{ flex: 0 10% }
+  .cf-sm-5{ flex: 0 5% }
+}
+
+@media ( min-width: 800px ){
+  .container{ max-width: 760px; }
+}
+@media ( min-width: 960px ){
+  .container{ max-width: 920px; }
+}
+/* md */
+@media ( min-width: 1120px ){
+  .container{ max-width: 1080px; }
+  .cf-md-100{ flex: 0 100% }
+  .cf-md-95{ flex: 0 95% }
+  .cf-md-90{ flex: 0 90% }
+  .cf-md-85{ flex: 0 85% }
+  .cf-md-80{ flex: 0 80% }
+  .cf-md-75{ flex: 0 75% }
+  .cf-md-50{ flex: 0 50% }
+  .cf-md-25{ flex: 0 25% }
+  .cf-md-20{ flex: 0 20% }
+  .cf-md-15{ flex: 0 15% }
+  .cf-md-10{ flex: 0 10% }
+  .cf-md-5{ flex: 0 5% }
+}
+/* lg */
+@media ( min-width: 1280px ){
+  .container{ max-width: 1240px; }
+  .cf-lg-100{ flex: 0 100% }
+  .cf-lg-95{ flex: 0 95% }
+  .cf-lg-90{ flex: 0 90% }
+  .cf-lg-85{ flex: 0 85% }
+  .cf-lg-80{ flex: 0 80% }
+  .cf-lg-75{ flex: 0 75% }
+  .cf-lg-50{ flex: 0 50% }
+  .cf-lg-25{ flex: 0 25% }
+  .cf-lg-20{ flex: 0 20% }
+  .cf-lg-15{ flex: 0 15% }
+  .cf-lg-10{ flex: 0 10% }
+  .cf-lg-5{ flex: 0 5% }
+}
+/* xl */
+@media ( min-width: 1440px ){
+  .container{ max-width: 1400px; }
+  .cf-xl-100{ flex: 0 100% }
+  .cf-xl-95{ flex: 0 95% }
+  .cf-xl-90{ flex: 0 90% }
+  .cf-xl-85{ flex: 0 85% }
+  .cf-xl-80{ flex: 0 80% }
+  .cf-xl-75{ flex: 0 75% }
+  .cf-xl-50{ flex: 0 50% }
+  .cf-xl-25{ flex: 0 25% }
+  .cf-xl-20{ flex: 0 20% }
+  .cf-xl-15{ flex: 0 15% }
+  .cf-xl-10{ flex: 0 10% }
+  .cf-xl-5{ flex: 0 5% }
 }

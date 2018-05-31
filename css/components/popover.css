@@ -1,5 +1,5 @@
 .pop{
-
+  position: relative;
 }
 .pop .popover{
 
@@ -13,12 +13,16 @@
   opacity: 1;
   visibility: visible;
   pointer-events: all;
+
+  padding: 1rem;
+  background-color: #333;
+  border-radius: 5px;
 }
 
 
-.pop.left .popover    { right: 100%; }
+.pop.left .popover    { right: 100%; margin-right: 1rem; }
 .pop.center .popover  { left: 50%; transform: translateX( -50% ); }
-.pop.right .popover   { left: 100%; }
-.pop.top .popover     { bottom: 100%; }
+.pop.right .popover   { left: 100%; margin-left: 1rem; }
+.pop.top .popover     { bottom: 100%; margin-bottom: 1rem; }
 .pop.middle .popover  { top: 50%; transform: translateY( -50% ); }
-.pop.bottom .popover  { top: 100%; }
+.pop.bottom .popover  { top: 100%; margin-top: 1rem; }

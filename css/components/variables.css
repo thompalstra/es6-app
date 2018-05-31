@@ -10,4 +10,8 @@
   --light-transparent: transparent;
   --light-transparent-hover: rgba( 255,255,255,.010 );
   --light-transparent-active: rgba( 255,255,255, .030 );
+
+  --bs-active-webkit: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  --bs-active-moz: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  --bs-active: 10px 10px 5px 0px rgba(0,0,0,0.75);
 }

@@ -52,13 +52,13 @@
     },
   }, true );
   extend( Node ).with( {
-    load: function( url, processJs ){
+    load: function( url, evalJs ){
       fetch( url )
       .then( response => response.text() )
       .then( ( response ) => {
         this.innerHTML = response;
 
-        if( processJs === true ){
+        if( Boolean( evalJs ) === true ){
           this.querySelectorAll( "script" ).forEach( ( script ) => {
             var newScript = this.appendChild( document.createElement( "script" ) );
             newScript.innerHTML = script.innerHTML;

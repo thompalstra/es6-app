@@ -26,6 +26,7 @@
 
   extend( ortus ).with( {
     events: [],
+    widgets: {},
     on: function( eventType, callable ){
       if( typeof this.events[ eventType ] === "undefined" ){ this.events[ eventType ] = []; }
 

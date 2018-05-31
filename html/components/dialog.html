@@ -1,0 +1,50 @@
+<style>
+  .column.content{
+    background-color: white;
+  }
+</style>
+
+<div id="dialog-dialog"></div>
+<div id="dialog-alert-dialog"></div>
+<div id="dialog-confirm-dialog"></div>
+
+<div class="columns">
+  <div class="column dialog-buttons cf-100">
+    <button id="btn-dialog" class="button button-contained action">
+      Default dialog <i class="material-icons right">picture_in_picture</i>
+    </button>
+    <button id="btn-dialog-alert" class="button button-contained action">
+      Alert dialog <i class="material-icons right">warning</i>
+    </button>
+    <button id="btn-dialog-confirm" class="button button-contained action">
+      Confirm dialog <i class="material-icons right">check</i>
+    </button>
+  </div>
+</div>
+<script>
+  $d.one( "#btn-dialog" ).on( "click", ( e ) => {
+    new $o.widgets.dialog.Dialog( $d.one( "#dialog-dialog" ) )
+      .title( "Default dialog" )
+      .content( "Default dialog content" )
+      .buttons( [
+        { "label": "Confirm", "action": "confirm" },
+        { "label": "Cancel", "action": "dismiss" }
+      ] );
+  } );
+
+  $d.one( "#btn-dialog-alert" ).on( "click", ( e ) => {
+    new $o.widgets.dialog.AlertDialog( $d.one( "#dialog-alert-dialog" ) )
+      .title( "Alert dialog" )
+      .content( "Are you sure you want to continue" );
+  } );
+
+  $d.one( "#btn-dialog-confirm" ).on( "click", ( e ) => {
+    new $o.widgets.dialog.ConfirmDialog(  $d.one( "#dialog-confirm-dialog" )  )
+      .title( "Confirm dialog" )
+      .content( "Please press OK to confirm your action" )
+      .buttons( [
+        { label: "Confirm", action: "confirm" },
+        { label: "Cancel", action: "dismiss" }
+      ] );
+  } );
+</script>
