@@ -55,7 +55,7 @@
   background-color: buttonface;
 }
 
-
+/* ACTION */
 
 .button-text.action{
   color: var(--action);
@@ -99,5 +99,52 @@
 
 .button-text.action:active,
 .button-outlined.action:active{
+  background-color: var(--dark-transparent-active);
+}
+
+/* INFO */
+
+.button-text.info{
+  color: var(--info);
+}
+.button-outlined.info{
+  border-color: rgba(102, 102, 102, .4);
+  color: var(--info);
+}
+.button-round.info,
+.button-contained.info{
+  border-color: var(--info);
+  background-color: var(--info);
+  color: white;
+}
+
+.button-text.info:hover,
+.button-outlined.info:hover{
+  color: var(--info-hover);
+}
+.button-round.info:hover,
+.button-contained.info:hover{
+  border-color: var(--info-hover);
+  background-color: var(--info-hover);
+}
+
+.button-text.info:hover,
+.button-outlined.info:hover{
+  background-color: var(--dark-transparent-hover);
+}
+
+.button-text.info:active,
+.button-outlined.info:active{
+  color: var(--info-active);
+}
+
+.button-round.info:active,
+.button-contained.info:active{
+  border-color: var(--info-active);
+  background-color: var(--info-active);
+}
+
+.button-text.info:active,
+.button-outlined.info:active{
   background-color: var(--dark-transparent-active);
 }
