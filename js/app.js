@@ -13,11 +13,12 @@ extend( EventManager ).with( {
   }
 }, true );
 
-$o(function(){
-  $d.one("body").load( "/html/main.html", true );
+$d.on("click", "[data-on='click']", function( event ) {
+  $e.handle.apply( $e, [ this, event ] );
+} );
 
-  $d.on("click", "[data-on='click']", function( event ) {
-    // $e.handle( this );
-    $e.handle.apply( $e, [ this, event ] );
-  } );
-});
+document.addEventListener( "DOMContentLoaded", function( event ) {
+  setTimeout( (e) => {
+    $d.one("body").load( "/html/main.html", true );
+  }, 1000 );
+} )

@@ -8,18 +8,19 @@
   --info-active: #17a98c; /*10% darken*/
 
   --dark-transparent: transparent;
-  --dark-transparent-hover: rgba( 0,0,0,.010 );
-  --dark-transparent-active: rgba( 0,0,0, .030 );
+  --dark-transparent-hover: rgba( 0,0,0, .1 );
+  --dark-transparent-active: rgba( 0,0,0, .2 );
 
   --light-transparent: transparent;
-  --light-transparent-hover: rgba( 255,255,255,.010 );
-  --light-transparent-active: rgba( 255,255,255, .030 );
+  --light-transparent-hover: rgba( 255,255,255,.1 );
+  --light-transparent-active: rgba( 255,255,255, .2 );
 
   --bs-active-webkit: 10px 10px 5px 0px rgba(0,0,0,0.75);
   --bs-active-moz: 10px 10px 5px 0px rgba(0,0,0,0.75);
   --bs-active: 10px 10px 5px 0px rgba(0,0,0,0.75);
 
-  -transition-default: all 0.3s cubic-bezier(.25,.8,.25,1);
+  --transition-default: all 0.3s cubic-bezier(.25,.8,.25,1);
+  --transition-opacity-default: opacity 0.3s cubic-bezier(.25,.8,.25,1);
 
   --bs-depth-1: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   --bs-depth-2: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);

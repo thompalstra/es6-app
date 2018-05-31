@@ -6,3 +6,6 @@
   float: right;
   margin-left: auto;
 }
+.flex{
+  display: flex;
+}

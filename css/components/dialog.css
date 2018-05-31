@@ -1,4 +1,10 @@
+
+
 .dialog{
+
+  display: flex;
+  flex-direction: column;
+
   position: absolute;
   top: 50%; left: 50%;
   transform: translate( -50%, -50% );
@@ -6,13 +12,67 @@
   z-index: 1000;
   box-shadow: var(--bs-depth-5);
   border: 1px solid #cecece;
+
+  min-width: 250px;
+
+  transition: var(--transition-opacity-default);
+
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+
+  z-index: 10000;
 }
+
+.dialog + .backdrop{
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba( 0, 0, 0, .8);
+
+  transition: var(--transition-opacity-default);
+
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+
+  z-index: 9999;
+}
+
 .dialog .title{
-  padding: 1rem
+  font-size: 21px;
 }
-.dialog .content{
-  padding: 1rem
-}
+.dialog .content{}
 .dialog .actions{
-  padding: 1rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.dialog .component{
+  padding-top: 0;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+}
+
+.dialog .component:first-child{
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.dialog .component:last-child{
+  padding-top: 0;
+  padding-bottom: 1rem;
+}
+
+
+
+.dialog.show,
+.dialog.show + .backdrop{
+  opacity: 1;
+  pointer-events: all;
+  visibility: visible;
+}
+.dialog.dismissing,
+.dialog.dismissing + .backdrop{
+  opacity: 0;
+  pointer-events: none;
 }

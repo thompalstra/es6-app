@@ -23,28 +23,32 @@
 </div>
 <script>
   $d.one( "#btn-dialog" ).on( "click", ( e ) => {
-    new $o.widgets.dialog.Dialog( $d.one( "#dialog-dialog" ) )
+    new Dialog( $d.one( "#dialog-dialog" ) )
       .title( "Default dialog" )
       .content( "Default dialog content" )
       .buttons( [
         { "label": "Confirm", "action": "confirm" },
         { "label": "Cancel", "action": "dismiss" }
-      ] );
+      ] )
+      .show();
   } );
 
   $d.one( "#btn-dialog-alert" ).on( "click", ( e ) => {
-    new $o.widgets.dialog.AlertDialog( $d.one( "#dialog-alert-dialog" ) )
+    new AlertDialog( $d.one( "#dialog-alert-dialog" ) )
       .title( "Alert dialog" )
-      .content( "Are you sure you want to continue" );
+      .content( "Are you sure you want to continue" )
+      .buttons()
+      .show();
   } );
 
   $d.one( "#btn-dialog-confirm" ).on( "click", ( e ) => {
-    new $o.widgets.dialog.ConfirmDialog(  $d.one( "#dialog-confirm-dialog" )  )
+    new ConfirmDialog(  $d.one( "#dialog-confirm-dialog" )  )
       .title( "Confirm dialog" )
       .content( "Please press OK to confirm your action" )
       .buttons( [
         { label: "Confirm", action: "confirm" },
         { label: "Cancel", action: "dismiss" }
-      ] );
+      ] )
+      .show();
   } );
 </script>
