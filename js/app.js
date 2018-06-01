@@ -18,7 +18,7 @@ $d.on("click", "[data-on='click']", function( event ) {
 } );
 
 document.addEventListener( "DOMContentLoaded", function( event ) {
-  setTimeout( (e) => {
+  // setTimeout( (e) => {
     $d.one("body").load( "/html/main.html", true );
-  }, 1000 );
+  // }, 1000 );
 } )

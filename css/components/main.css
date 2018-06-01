@@ -9,3 +9,27 @@
 .flex{
   display: flex;
 }
+.inline-flex{
+  display: inline-flex;
+}
+
+.justify-content-center{
+  justify-content: center;
+}
+.align-items-center{
+  align-items: center;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #777;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}

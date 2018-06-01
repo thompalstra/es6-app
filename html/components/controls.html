@@ -1,13 +1,31 @@
-<div class="columns">
-  <div class="column dialog-buttons cf-100">
-    <button class="button button-text action">
-      <i class="material-icons left">add</i> Create
-    </button>
-    <button class="button button-outlined action">
-      <i class="material-icons left">add</i> Create
-    </button>
-    <button class="button button-contained action">
-      Create <i class="material-icons right">add</i>
-    </button>
+<style>
+  .html.components.controls{
+    color: white;
+  }
+</style>
+
+<div class="rows html components controls">
+  <div class="row rf-auto">
+    <h2>Buttons</h2>
+    <button class="button button-text action"><i class="material-icons left">add</i> <span>Create</span></button>
+    <button class="button button-outlined action"><i class="material-icons left">add</i> <span>Create</span></button>
+    <button class="button button-contained action"><i class="material-icons right">add</i><span>Create</span></button>
+  </div>
+  <div class="row rf-auto">
+    <h2>Progress</h2>
+    <progress class="progress progress-default" value="20" min="0" max="60">dsa</progress>
+    <progress class="progress progress-default" value="0" min="0" max="0">dsa</progress>
+  </div>
+  <div class="row rf-auto">
+    <h2>Checkboxes</h2>
+    <label class="inline-flex"><input type="checkbox" class="checkbox checkbox-default">&nbsp;checkbox default</label>
+    <label class="inline-flex"><input type="checkbox" class="checkbox checkbox-default action">&nbsp;checkbox action</label>
+    <label class="inline-flex"><input type="checkbox" class="checkbox checkbox-default info">&nbsp;checkbox info</label>
+  </div>
+  <div class="row rf-auto">
+    <h2>Switches</h2>
+    <label class="inline-flex justify-content-center align-items-center"><input type="checkbox" class="checkbox checkbox-switch">&nbsp;switch default</label>
+    <label class="inline-flex justify-content-center align-items-center"><input type="checkbox" class="checkbox checkbox-switch action">&nbsp;switch action</label>
+    <label class="inline-flex justify-content-center align-items-center"><input type="checkbox" class="checkbox checkbox-switch info">&nbsp;switch info</label>
   </div>
 </div>

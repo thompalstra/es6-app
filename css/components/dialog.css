@@ -13,15 +13,20 @@
   box-shadow: var(--bs-depth-5);
   border: 1px solid #cecece;
 
-  min-width: 250px;
+  min-width: 300px;
 
-  transition: var(--transition-opacity-default);
+  max-height: calc( 100% - 2rem );
+  max-width: calc( 100% - 2rem );
 
   opacity: 0;
   pointer-events: none;
   visibility: hidden;
 
   z-index: 10000;
+}
+
+.dialog.show{
+  transition: var(--transition-opacity-default);
 }
 
 .dialog + .backdrop{
@@ -41,7 +46,12 @@
 .dialog .title{
   font-size: 21px;
 }
-.dialog .content{}
+.dialog .content{
+  overflow-y: auto;
+overflow-x: hidden;
+
+  white-space: pre-wrap;
+}
 .dialog .actions{
   display: flex;
   justify-content: flex-end;
@@ -75,4 +85,37 @@
 .dialog.dismissing + .backdrop{
   opacity: 0;
   pointer-events: none;
+}
+
+.dialog[animate="required"]{
+  animation: animateDialogRequired .5s;
+}
+
+.dialog[animate="required"] + .backdrop{
+  animation: animateDialogRequiredBackdrop .5s;
+}
+
+@keyframes animateDialogRequired {
+  0% {
+    left: calc( 50% );
+  } 20% {
+    left: calc( 50% + 10px );
+  } 40% {
+    left: calc( 50% - 10px );
+  } 60% {
+    left: calc( 50% + 10px );
+  } 80% {
+    left: calc( 50% - 10px );
+  }   100% {
+    left: calc( 50% );
+  }
+}
+@keyframes animateDialogRequiredBackdrop{
+  0% {
+    background-color: rgba( 0, 0, 0, .8);
+  } 50% {
+    background-color: rgba( 0, 0, 0, .7);
+  } 100% {
+    background-color: rgba( 0, 0, 0, .8);
+  }
 }

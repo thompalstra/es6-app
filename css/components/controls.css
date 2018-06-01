@@ -1,0 +1,235 @@
+progress.progress.progress-default {
+	background-color: transparent;
+
+  -webkit-appearance: none;
+  appearance: none;
+
+	width: 100%;
+	height: .5rem;
+}
+progress.progress.progress-default::-webkit-progress-bar {
+	background-color: rgba( 127, 127, 127, .3 );
+}
+progress.progress.progress-default::-moz-progress-bar {
+  background-color: rgba( 127, 127, 127, .3 );
+}
+
+progress.progress.progress-default::-webkit-progress-value {
+  position: relative;
+
+  background: linear-gradient( to right, var(--action), var(--action), var(--action-light), var(--action), var(--action) );
+}
+progress.progress.progress-default[value="0"]{
+  position: relative;
+  overflow: hidden;
+}
+progress.progress.progress-default[value="0"]:before{
+  content: "";
+  height: .5rem;
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  background: linear-gradient( to right, var(--action), var(--action), var(--action-light), var(--action), var(--action) );
+
+  animation: progressDefaultIndeterminateBefore 4s infinite;
+}
+
+@keyframes progressDefaultIndeterminateBefore{
+  0% {
+    width: 20%;
+    left: -20%;
+  } 75%{
+
+    left: 110%;
+  } 100% {
+    width: 80%;
+    left: 110%;
+  }
+}
+
+progress.progress.progress-default[value="0"]:after{
+  content: "";
+  height: .5rem;
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  background: linear-gradient( to right, var(--action), var(--action), var(--action-light), var(--action), var(--action) );
+
+  animation: progressDefaultIndeterminateAfter 4s infinite;
+}
+
+@keyframes progressDefaultIndeterminateAfter{
+  0% {
+    width: 80%;
+    left: -80%;
+  } 50%{
+    width: 80%;
+    left: -80%;
+  } 100% {
+    width: 20%;
+    left: 110%;
+  }
+}
+
+input[type="checkbox"].checkbox.checkbox-default{
+
+	position: relative;
+
+	-webkit-appearance: none;
+  appearance: none;
+
+	margin: 0;
+	padding: 0;
+
+	width: 20px;
+	height: 20px;
+
+	outline: 0;
+
+	cursor: pointer;
+}
+input[type="checkbox"].checkbox.checkbox-default:before{
+	content: "";
+	position: absolute;
+	border: 2px solid #333;
+	border-radius: 2px;
+	width: 20px;
+	height: 20px;
+	box-sizing: border-box;
+	display: inline-flex;
+	z-index: 5;
+}
+input[type="checkbox"].checkbox.checkbox-default:after{
+	content: "checkbox";
+	font-family: "Material Icons";
+	color: #333;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	position: absolute;
+	border-radius: 2px;
+	margin: auto;
+	display: inline-block;
+	font-weight: 700;
+	width: 20px;
+	height: 20px;
+	box-sizing: border-box;
+	line-height: 20px;
+	align-items: center;
+	text-align: center;
+	font-size: 20px;
+	z-index: 10;
+
+	transition: var(--transition-default);
+
+	opacity: 0;
+	transform: scale(.5);
+}
+
+
+input[type="checkbox"].checkbox.checkbox-default:checked:before{
+	border-color: buttonface;
+	background-color: buttonface;
+}
+input[type="checkbox"].checkbox.checkbox-default:checked:after{
+	background-color:buttonface;
+
+	opacity: 1;
+	transform: scale(1);
+}
+
+
+input[type="checkbox"].checkbox.checkbox-default.action:after{
+	color: white;
+}
+input[type="checkbox"].checkbox.checkbox-default.action:checked:before{
+	border-color: var(--action);
+	background-color: var(--action);
+}
+input[type="checkbox"].checkbox.checkbox-default.action:checked:after{
+	background-color: var(--action);
+}
+
+input[type="checkbox"].checkbox.checkbox-default.info:after{
+	color: white;
+}
+input[type="checkbox"].checkbox.checkbox-default.info:checked:before{
+	border-color: var(--info);
+	background-color: var(--info);
+}
+input[type="checkbox"].checkbox.checkbox-default.info:checked:after{
+	background-color: var(--info);
+}
+
+
+
+input[type="checkbox"].checkbox.checkbox-switch{
+
+	position: relative;
+
+	-webkit-appearance: none;
+	appearance: none;
+
+	margin: 0;
+	padding: 0;
+
+	outline: 0;
+}
+input[type="checkbox"].checkbox.checkbox-switch:before{
+	content: "";
+
+	display: inline-block;
+	width: 30px;
+	height: 10px;
+	margin: 13px;
+	background-color: #ddd;
+	border-radius: 5px;
+
+	transition: var(--transition-default);
+}
+input[type="checkbox"].checkbox.checkbox-switch:after{
+	content: "";
+	position: absolute;
+	top: 8px;
+	bottom: 8px;
+	left: .5rem;
+	display: inline-block;
+	margin: 0;
+	height: 20px;
+	width: 20px;
+	border-radius: 100%;
+	background-color: #999;
+	transition: var(--transition-default);
+}
+
+input[type="checkbox"].checkbox.checkbox-switch:checked:after{
+	left: calc( 100% - 27px );
+	background-color: #aaa;
+}
+
+
+input[type="checkbox"].checkbox.checkbox-switch:before{
+	background-color: #333;
+}
+input[type="checkbox"].checkbox.checkbox-switch:checked:before{
+	background-color: #555;
+}
+
+input[type="checkbox"].checkbox.checkbox-switch.action:after{
+	background-color: #999;
+}
+input[type="checkbox"].checkbox.checkbox-switch.action:checked:after{
+	background-color: var(--action);
+}
+
+input[type="checkbox"].checkbox.checkbox-switch.info:after{
+	background-color: #999;
+}
+input[type="checkbox"].checkbox.checkbox-switch.info:checked:after{
+	background-color: var(--info);
+}

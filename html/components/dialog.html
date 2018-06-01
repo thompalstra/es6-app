@@ -10,15 +10,10 @@
 
 <div class="columns">
   <div class="column dialog-buttons cf-100">
-    <button id="btn-dialog" class="button button-contained action">
-      Default dialog <i class="material-icons right">picture_in_picture</i>
-    </button>
-    <button id="btn-dialog-alert" class="button button-contained action">
-      Alert dialog <i class="material-icons right">warning</i>
-    </button>
-    <button id="btn-dialog-confirm" class="button button-contained action">
-      Confirm dialog <i class="material-icons right">check</i>
-    </button>
+    <button id="btn-dialog" class="button button-contained action">Default dialog <i class="material-icons right">picture_in_picture</i></button>
+    <button id="btn-dialog-content" class="button button-contained action">Default dialog with content<i class="material-icons right">picture_in_picture</i></button>
+    <button id="btn-dialog-alert" class="button button-contained action">Alert dialog <i class="material-icons right">warning</i></button>
+    <button id="btn-dialog-confirm" class="button button-contained action">Confirm dialog <i class="material-icons right">check</i></button>
   </div>
 </div>
 <script>
@@ -27,7 +22,22 @@
       .title( "Default dialog" )
       .content( "Default dialog content" )
       .buttons( [
-        { "label": "Confirm", "action": "confirm" },
+        { "label": "Ok", "action": "confirm" },
+        { "label": "Cancel", "action": "dismiss" }
+      ] )
+      .show();
+  } );
+
+  $d.one( "#btn-dialog-content" ).on( "click", ( e ) => {
+    new Dialog( $d.one( "#dialog-dialog" ) )
+      .title( "Default dialog with actual content" )
+      .content( '\
+      <div>\
+      <label class="inline-flex"><input type="checkbox" class="checkbox checkbox-default info">&nbsp;Show notifications</label>\
+      </div>\
+      ' )
+      .buttons( [
+        { "label": "Ok", "action": "confirm" },
         { "label": "Cancel", "action": "dismiss" }
       ] )
       .show();
@@ -46,7 +56,7 @@
       .title( "Confirm dialog" )
       .content( "Please press OK to confirm your action" )
       .buttons( [
-        { label: "Confirm", action: "confirm" },
+        { label: "Ok", action: "confirm" },
         { label: "Cancel", action: "dismiss" }
       ] )
       .show();

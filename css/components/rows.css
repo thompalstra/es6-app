@@ -1,6 +1,96 @@
 .rows{
+  display: flex;
+  flex-direction: column;
 
+  height: 100%;
+  width: 100%;
 }
 .row{
-  
+  flex: 1;
+}
+
+[class^="rf-"]{
+  flex: 0 100%;
+}
+
+.rf-100{ flex: 0 100% }
+.rf-95{ flex: 0 95% }
+.rf-90{ flex: 0 90% }
+.rf-85{ flex: 0 85% }
+.rf-80{ flex: 0 80% }
+.rf-75{ flex: 0 75% }
+.rf-50{ flex: 0 50% }
+.rf-25{ flex: 0 25% }
+.rf-20{ flex: 0 20% }
+.rf-15{ flex: 0 15% }
+.rf-10{ flex: 0 10% }
+.rf-5{ flex: 0 5% }
+.rf-auto{ flex: 0 auto; }
+
+@media ( min-width: 480px ){
+}
+/* sm */
+@media ( min-width: 640px ){
+  .rf-sm-100{ flex: 0 100% }
+  .rf-sm-95{ flex: 0 95% }
+  .rf-sm-90{ flex: 0 90% }
+  .rf-sm-85{ flex: 0 85% }
+  .rf-sm-80{ flex: 0 80% }
+  .rf-sm-75{ flex: 0 75% }
+  .rf-sm-50{ flex: 0 50% }
+  .rf-sm-25{ flex: 0 25% }
+  .rf-sm-20{ flex: 0 20% }
+  .rf-sm-15{ flex: 0 15% }
+  .rf-sm-10{ flex: 0 10% }
+  .rf-sm-5{ flex: 0 5% }
+}
+
+@media ( min-width: 800px ){
+}
+@media ( min-width: 960px ){
+}
+/* md */
+@media ( min-width: 1120px ){
+  .rf-md-100{ flex: 0 100% }
+  .rf-md-95{ flex: 0 95% }
+  .rf-md-90{ flex: 0 90% }
+  .rf-md-85{ flex: 0 85% }
+  .rf-md-80{ flex: 0 80% }
+  .rf-md-75{ flex: 0 75% }
+  .rf-md-50{ flex: 0 50% }
+  .rf-md-25{ flex: 0 25% }
+  .rf-md-20{ flex: 0 20% }
+  .rf-md-15{ flex: 0 15% }
+  .rf-md-10{ flex: 0 10% }
+  .rf-md-5{ flex: 0 5% }
+}
+/* lg */
+@media ( min-width: 1280px ){
+  .rf-lg-100{ flex: 0 100% }
+  .rf-lg-95{ flex: 0 95% }
+  .rf-lg-90{ flex: 0 90% }
+  .rf-lg-85{ flex: 0 85% }
+  .rf-lg-80{ flex: 0 80% }
+  .rf-lg-75{ flex: 0 75% }
+  .rf-lg-50{ flex: 0 50% }
+  .rf-lg-25{ flex: 0 25% }
+  .rf-lg-20{ flex: 0 20% }
+  .rf-lg-15{ flex: 0 15% }
+  .rf-lg-10{ flex: 0 10% }
+  .rf-lg-5{ flex: 0 5% }
+}
+/* xl */
+@media ( min-width: 1440px ){
+  .rf-xl-100{ flex: 0 100% }
+  .rf-xl-95{ flex: 0 95% }
+  .rf-xl-90{ flex: 0 90% }
+  .rf-xl-85{ flex: 0 85% }
+  .rf-xl-80{ flex: 0 80% }
+  .rf-xl-75{ flex: 0 75% }
+  .rf-xl-50{ flex: 0 50% }
+  .rf-xl-25{ flex: 0 25% }
+  .rf-xl-20{ flex: 0 20% }
+  .rf-xl-15{ flex: 0 15% }
+  .rf-xl-10{ flex: 0 10% }
+  .rf-xl-5{ flex: 0 5% }
 }

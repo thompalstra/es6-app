@@ -82,6 +82,13 @@
 
         this.backdrop.parent = this;
         this.backdrop.className = "backdrop";
+
+        this.backdrop.addEventListener( "click", function( event ) {
+          this.parent.element.removeAttribute( "animate" );
+          setTimeout( function(e){
+            this.parent.element.setAttribute( "animate", "required" );
+          }.bind( { parent: this.parent, element: this.element } ), 1 );
+        }.bind( { parent: this, element: this.backdrop } ) );
       }
     },
     registerEventListeners: function(){
@@ -163,7 +170,7 @@
 
       if( this instanceof ortus.widgets.dialog.AlertDialog ){
         opt = [
-          { label: "Confirm", action: "confirm" }
+          { label: "Ok", action: "confirm" }
         ];
       }
 
@@ -193,7 +200,7 @@
       return this;
     },
     dismiss: function( timeInMs ){
-      if( typeof timeInMs === "undefined" ){ timeInMs = 1000; }
+      if( typeof timeInMs === "undefined" ){ timeInMs = 500; }
       this.element.classList.add("dismissing");
 
       this.timeout = setTimeout( function( event ) {
@@ -208,13 +215,14 @@
       }.bind( this ), timeInMs );
     },
     show: function( timeInMs  ){
-      if( typeof timeInMs === "undefined" ){ timeInMs = 300; }
+      if( typeof timeInMs === "undefined" ){ timeInMs = 500; }
 
-      this.element.classList.add("show");
-      document.body.classList.add("data-active-backdrop");
+      setTimeout( ( e ) => {
+        this.element.classList.add("show");
+      }, 1 );
     },
     hide: function( timeInMs ){
-      if( typeof timeInMs === "undefined" ){ timeInMs = 300; }
+      if( typeof timeInMs === "undefined" ){ timeInMs = 500; }
       this.element.classList.remove("show");
       if( $d.find(".dialog.show").length == 0 ){
         document.body.classList.remove("data-active-backdrop");
