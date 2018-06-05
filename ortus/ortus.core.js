@@ -65,7 +65,10 @@
         } else if( typeof b === "string" && typeof c === "function" ){
           this.addEventListener( eventType, ( originalEvent ) => {
             var closest;
-            if( originalEvent.target.matches( b ) ){
+
+            if( originalEvent.target instanceof Document ){
+              c.call( originalEvent.target, originalEvent );
+            } else if( originalEvent.target.matches( b ) ){
               c.call( originalEvent.target, originalEvent );
             } else if( ( closest = originalEvent.target.closest( b ) ) ){
               c.call( closest, originalEvent );

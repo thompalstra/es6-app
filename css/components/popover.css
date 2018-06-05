@@ -2,8 +2,9 @@
   position: relative;
 }
 .pop .popover{
-
   position: absolute;
+
+  z-index: 100;
 
   opacity: 0;
   visibility: hidden;

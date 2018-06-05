@@ -10,9 +10,17 @@
   --info-hover: #17a98c; /*10% darken*/
   --info-active: #14967c; /*20% darken*/
 
+  --alto: #dddddd; /*0% darken*/
+  --alto-hover: #c6c6c6; /*10% darken*/
+  --alto-active: #b0b0b0; /*20% darken*/
+
+  --mine: #333; /*0% darken*/
+  --mine-hover: #2d2d2d; /*10% darken*/
+  --mine-active: #282828; /*20% darken*/
+
   --dark-transparent: transparent;
-  --dark-transparent-hover: rgba( 0,0,0, .05 );
-  --dark-transparent-active: rgba( 0,0,0, .10 );
+  --dark-transparent-hover: rgba( 0,0,0, .050 );
+  --dark-transparent-active: rgba( 0,0,0, .075 );
 
   --light-transparent: transparent;
   --light-transparent-hover: rgba( 255,255,255,.1 );
@@ -32,6 +40,9 @@
   --bs-depth-5: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
 }
 
+.fg-black{ color: black; }
+.bg-black{ background-color: black; }
+
 .fg-white{ color: white; }
 .bg-white{ background-color: white; }
 
@@ -40,3 +51,9 @@
 
 .fg-info{ color: var(--info); }
 .bg-info{ background-color: var(--info); }
+
+.fg-alto{ color: var(--alto); }
+.bg-alto{ background-color: var(--alto); }
+
+.fg-mine{ color: var(--mine); }
+.bg-mine{ background-color: var(--mine); }

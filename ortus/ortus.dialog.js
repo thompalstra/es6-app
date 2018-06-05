@@ -172,6 +172,11 @@
         opt = [
           { label: "Ok", action: "confirm" }
         ];
+      } else if( this instanceof ortus.widgets.dialog.ConfirmDialog ){
+        opt = [
+          { label: "Ok", action: "confirm" },
+          { label: "Cancel", action: "dismiss" },
+        ];
       }
 
       if( typeof opt === "undefined" ){
@@ -184,7 +189,7 @@
 
           btn.className = ( typeof option["className"] !== "undefined" ) ?
             options.className :
-            "button button-text info";
+            "button button-text info paper paper-ink-dark";
 
           btn.addEventListener( "click", function( event ) {
             this.parent.element.dispatchEvent( new CustomEvent( this.element.dataset["action"], {

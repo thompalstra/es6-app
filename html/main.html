@@ -18,6 +18,10 @@
 <div class="columns">
   <div class="column sidebar cf-auto">
     <ul class="toolbar vertical">
+      <li class="button button-round action pop right middle" data-on="click"  data-eval-js="1" data-action="load" data-href="./html/home.html" data-target=".column.content">
+        <i class="material-icons center">home</i>
+        <span class="popover">Home</span>
+      </li>
       <li class="button button-round action pop right middle" data-on="click"  data-eval-js="1" data-action="load" data-href="./html/components/controls.html" data-target=".column.content">
         <i class="material-icons center">radio_button_checked</i>
         <span class="popover">Controls</span>
@@ -25,6 +29,10 @@
       <li class="button button-round action pop right middle" data-on="click" data-eval-js="1" data-action="load" data-href="./html/components/dialog.html" data-target=".column.content">
         <i class="material-icons center">picture_in_picture</i>
         <span class="popover">Dialog</span>
+      </li>
+      <li class="button button-round action pop right middle" data-on="click" data-eval-js="1" data-action="load" data-href="./html/components/list.html" data-target=".column.content">
+        <i class="material-icons center">list</i>
+        <span class="popover">List</span>
       </li>
       <li class="button button-round action add">
         <i class="material-icons center">add</i>
@@ -34,5 +42,5 @@
   <div class="column content"></div>
 </div>
 <script>
-    $d.one( ".column.content" ).load("./html/welcome.html", true);
+$d.one( ".column.content" ).load("./html/home.html", true);
 </script>

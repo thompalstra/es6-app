@@ -1,5 +1,6 @@
 .button{
-  border-width: 1px;
+  /* border-width: 1px; */
+  border-width: 0px;
   border-style: solid;
   border-color: transparent;
 
@@ -19,7 +20,7 @@
 
   transition: var(--transition-default);
 
-  font-weight: 700;  
+  font-weight: 700;
 
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -49,6 +50,7 @@
   background-color: transparent;
 }
 .button.button-outlined{
+  border-width: 1px;
   background-color: transparent;
 }
 .button.button-contained{

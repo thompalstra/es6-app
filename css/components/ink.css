@@ -1,0 +1,28 @@
+.paper{
+  position: relative;
+  overflow: hidden;
+}
+
+.paper > *{
+  pointer-events: none;
+}
+
+.paper .ink{
+  position: absolute;
+
+  border-radius: 100%;
+
+  transform: scale( 0 );
+  opacity: 0;
+  transition: 1s;
+  transition-timing-function: ease-out;
+
+  pointer-events: none;
+}
+
+.paper .ink{
+  background-color: rgba( 255,255,255,.3 );
+}
+.paper.paper-ink-dark .ink{
+  background-color: rgba( 0, 0, 0, .05 );
+}
