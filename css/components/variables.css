@@ -1,22 +1,22 @@
 :root{
   --action: #52baff; /*0% darken*/
-  --action-hover: #30acff; /* 10% */
-  --action-active: #0e9fff; /* 20% */
+  --action-hover: #5abdff; /* 5% lighter */
+  --action-active: #63c0ff; /* 10% lighter */
 
   --action-light: #85ceff; /* 30% lighter */
   --action-lighter: #a8dcff; /*50% lighter */
 
   --info: #1abc9c; /*0% darken*/
-  --info-hover: #17a98c; /*10% darken*/
-  --info-active: #14967c; /*20% darken*/
+  --info-hover: #1bc9a6; /*5% lighter*/
+  --info-active: #1dd6b1; /*10% lighter*/
 
   --alto: #dddddd; /*0% darken*/
-  --alto-hover: #c6c6c6; /*10% darken*/
-  --alto-active: #b0b0b0; /*20% darken*/
+  --alto-hover: #dedede; /*5% lighter*/
+  --alto-active: #e0e0e0; /*10% lighter*/
 
   --mine: #333; /*0% darken*/
-  --mine-hover: #2d2d2d; /*10% darken*/
-  --mine-active: #282828; /*20% darken*/
+  --mine-hover: #3d3d3d; /*5% lighter*/
+  --mine-active: #474747; /*10% lighter*/
 
   --dark-transparent: transparent;
   --dark-transparent-hover: rgba( 0,0,0, .050 );
