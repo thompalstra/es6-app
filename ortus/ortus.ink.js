@@ -1,5 +1,4 @@
 ( function() {
-
   extend( Node ).with( {
     getRealPos: function( originalEvent ){
 

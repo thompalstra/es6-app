@@ -1,40 +1,66 @@
 <style>
   .column.sidebar .toolbar .button.add{
-    border: 2px dotted #aaa;
-    color: #aaa;
+    border: 2px dotted #aaaaaa55;
+    color: #aaaaaa55;
     background-color: var(--light-transparent);
   }
   .column.sidebar .toolbar .button.add:hover{
-    color: #ddd;
-    border-color: #ddd;
-    background-color: var(--light-transparent-hover);
+    color: #aaaaaaaa;
+    border-color: #aaaaaaaa;
   }
   .column.sidebar .toolbar .button.add:active{
-    color: #fff;
-    border-color: #fff;
-    background-color: var(--light-transparent-active);
+    color: #aaaaaaff;
+    border-color: #aaaaaaff;
   }
+  .columns .column.sidebar .toolbar li.active{
+    border-color: var(--mine-active);
+    background-color: var(--mine-active);
+    color: white;
+  }
+
+  .columns .column.sidebar .toolbar li:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    width: .5rem;
+    height: 4rem;
+    transform: translateX(-16px);
+    border-top-right-radius: 24px;
+    border-bottom-right-radius: 24px;
+  }
+
+  .columns .column.sidebar .toolbar li.active:before{
+    background-color: #f2f2f2;
+  }
+
 </style>
 <div class="columns">
   <div class="column sidebar cf-auto">
     <ul class="toolbar vertical">
-      <li class="button button-round action pop right middle" data-on="click"  data-eval-js="1" data-action="load" data-href="./html/home.html" data-target=".column.content">
+      <li class="button button-round mine pop right middle"
+      data-on="click" data-params='{ "action":"load", "params": [ "./html/home.html", ".column.content", "1" ]}'>
         <i class="material-icons center">home</i>
         <span class="popover">Home</span>
       </li>
-      <li class="button button-round action pop right middle" data-on="click"  data-eval-js="1" data-action="load" data-href="./html/components/controls.html" data-target=".column.content">
+      <li class="button button-round mine pop right middle"
+      data-on="click" data-params='{ "action":"load", "params": [ "./html/components/controls.html", ".column.content", "1" ]}'>
         <i class="material-icons center">radio_button_checked</i>
         <span class="popover">Controls</span>
       </li>
-      <li class="button button-round action pop right middle" data-on="click" data-eval-js="1" data-action="load" data-href="./html/components/dialog.html" data-target=".column.content">
+      <li class="button button-round mine pop right middle"
+      data-on="click" data-params='{ "action":"load", "params": [ "./html/components/dialog.html", ".column.content", "1" ]}'>
         <i class="material-icons center">picture_in_picture</i>
         <span class="popover">Dialog</span>
       </li>
-      <li class="button button-round action pop right middle" data-on="click" data-eval-js="1" data-action="load" data-href="./html/components/list.html" data-target=".column.content">
+      <li class="button button-round mine pop right middle"
+        data-on="click" data-params='{ "action":"load", "params": [ "./html/components/list.html", ".column.content", "1" ]}'>
         <i class="material-icons center">list</i>
         <span class="popover">List</span>
       </li>
-      <li class="button button-round action add">
+      <li class="button button-round mine action add">
         <i class="material-icons center">add</i>
       </li>
     </ul>
@@ -42,5 +68,5 @@
   <div class="column content"></div>
 </div>
 <script>
-$d.one( ".column.content" ).load("./html/home.html", true);
+  $d.one( ".column.content" ).load("./html/home.html", true);
 </script>

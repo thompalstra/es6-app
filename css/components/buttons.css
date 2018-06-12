@@ -62,6 +62,7 @@
   margin: 0;
   min-width: 0;
   min-height: 0;
+  border-width: 2px;
   background-color: buttonface;
 }
 
@@ -156,5 +157,52 @@
 
 .button-text.info:active,
 .button-outlined.info:active{
+  background-color: var(--dark-transparent-active);
+}
+
+/* MINE */
+
+.button-text.mine{
+  color: var(--mine);
+}
+.button-outlined.mine{
+  border-color: rgba(102, 102, 102, .4);
+  color: var(--mine);
+}
+.button-round.mine,
+.button-contained.mine{
+  border-color: var(--mine);
+  background-color: var(--mine);
+  color: white;
+}
+
+.button-text.mine:hover,
+.button-outlined.mine:hover{
+  color: var(--mine-hover);
+}
+.button-round.mine:hover,
+.button-contained.mine:hover{
+  border-color: var(--mine-hover);
+  background-color: var(--mine-hover);
+}
+
+.button-text.mine:hover,
+.button-outlined.mine:hover{
+  background-color: var(--dark-transparent-hover);
+}
+
+.button-text.mine:active,
+.button-outlined.mine:active{
+  color: var(--mine-active);
+}
+
+.button-round.mine:active,
+.button-contained.mine:active{
+  border-color: var(--mine-active);
+  background-color: var(--mine-active);
+}
+
+.button-text.mine:active,
+.button-outlined.mine:active{
   background-color: var(--dark-transparent-active);
 }

@@ -1,4 +1,4 @@
-( function() {
+// ( function() {
   window.ortus = function( arg ){
     if( typeof arg === "function" ){
       window.ortus.on( "ready", arg );
@@ -89,4 +89,4 @@
   document.addEventListener( "DOMContentLoaded", ( event ) => {
     $o.do( "ready" );
   } )
-} )();
+// } );

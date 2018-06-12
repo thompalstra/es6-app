@@ -1,4 +1,11 @@
 ( function() {
+  extend( HTMLCollection ).with( {
+    forEach: function( callable ){
+      for( let i = 0; i < this.length; i++ ){
+        callable.apply( this[i], [ this[i], i ] );
+      }
+    }
+  } );
   extend( Node ).with( {
     addClass: function( className ){
       this.classList.add( className );
@@ -40,6 +47,21 @@
     },
     hide: function(){
       this["style"]["display"] = "none";
+    },
+    siblings: function( querySelector ){
+      var siblings = [];
+      this.parentNode.children.forEach( ( node, index ) => {
+        if( node !== this ){
+          if( typeof querySelector === "string" ){
+            if( node.matches( querySelector ) ){
+              siblings.push( node );
+            }
+          } else {
+            siblings.push( node );
+          }
+        }
+      } );
+      return siblings;
     }
   } );
 } )();

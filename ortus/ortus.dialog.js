@@ -1,4 +1,4 @@
-(function(){
+( function() {
   extend( ortus.widgets ).with( {
     dialog: {
       Dialog: function( element, options ) {
@@ -245,5 +245,4 @@
   if( typeof window["AlertDialog"] === "undefined" ){
     window.AlertDialog = ortus.widgets.dialog.AlertDialog;
   }
-
 })();

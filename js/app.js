@@ -1,24 +1,41 @@
 window.EventManager = function(){}, window.$e = EventManager;
 
 extend( EventManager ).with( {
-  handle: function( node, event ){
-    if( typeof node.dataset.action !== "undefined" ){
-      if( typeof this[ node.dataset.action ] === "function" ){
-        this[ node.dataset.action ].apply( this, [ node, event ] );
-      } else { throw new Error(`Error handling 'on-event': Eventmanager.${node.dataset.action} is undefined`); }
-    } else { throw new Error(`Error handling 'on-event': 'data-action' is undefined`); }
+  handle: function( node, dataSet ){
+
+    var action = dataSet.action;
+    var params = dataSet.params;
+
+
+    if( typeof node[ action ] === "function" ){
+        node[ action ].apply( node, params );
+    } else { throw new Error(`Error handling 'on-event': Eventmanager.${action} is undefined`); };
   },
-  load: function( node, event ){
-    ( node.dataset.target ? $d.one(node.dataset.target) : node ).load( node.dataset.href, node.dataset.evalJs );
+  load: function( href, target, evalJs ){
+    var target = target ? $d.one( target ) : this;
+    target.load( href, evalJs );
+  },
+  setActiveMenuItem: function( querySelector ){
+    var menuItem = $d.one(querySelector);
+    menuItem.classList.add("active");
+    menuItem.siblings(".active").forEach( ( node ) => {
+      node.classList.remove("active");
+    } );
   }
 }, true );
 
 $d.on("click", "[data-on='click']", function( event ) {
-  $e.handle.apply( $e, [ this, event ] );
+  event.preventDefault();
+  var set = JSON.parse( this.dataset.params );
+  $e.handle.apply( $e, [ $e, JSON.parse( this.dataset.params ) ] );
 } );
 
 document.addEventListener( "DOMContentLoaded", function( event ) {
-  // setTimeout( (e) => {
-    $d.one("body").load( "/html/main.html", true );
-  // }, 1000 );
-} )
+  $d.one("body").load( "/html/main.html", true )
+    .then( function( res ) {
+    } )
+} );
+document.on( "ajax.loading", function( event ) {
+} );
+document.on( "ajax.loaded", function( event ) {
+} );

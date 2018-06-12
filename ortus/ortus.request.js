@@ -53,11 +53,17 @@
   }, true );
   extend( Node ).with( {
     load: function( url, evalJs ){
-      fetch( url )
-      .then( response => response.text() )
-      .then( ( response ) => {
-        this.innerHTML = response;
 
+      document.do( "ajax.loading", {
+        cancelable: true,
+        bubbles: true,
+        detail: { target: this, url: url }
+      } );
+
+      return fetch( url )
+      .then( response => response.text() )
+      .then( function ( response ) {
+        this.innerHTML = response;
         if( Boolean( evalJs ) === true ){
           this.querySelectorAll( "script" ).forEach( ( script ) => {
             var newScript = this.appendChild( document.createElement( "script" ) );
@@ -65,7 +71,14 @@
             script.remove();
           } );
         }
-      } );
+
+        document.do( "ajax.loaded", {
+          cancelable: true,
+          bubbles: true,
+          detail: { target: this, url: url }
+        } );
+
+      }.bind(this) );
     }
   } )
 } )();

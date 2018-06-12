@@ -22,3 +22,18 @@
   -ms-user-select: none;      /* IE 10+ */
   user-select: none;          /* Likely future */
 }
+
+.list.list-default > li{
+  transition: var(--transition-default);
+  cursor: pointer;
+}
+
+.list.list-default > li{
+  background-color: var(--dark-transparent);
+}
+.list.list-default > li:hover{
+  background-color: var(--dark-transparent-hover);
+}
+.list.list-default > li:active{
+  background-color: var(--dark-transparent-active);
+}

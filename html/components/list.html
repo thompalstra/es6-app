@@ -5,18 +5,28 @@
   }
 </style>
 
-<div class="rows html components list">
-  <div class="row rf-auto">
+<div class="columns html components list">
+  <div class="column cf-auto">
     <ul class="list list-default">
-      <li class="paper paper-ink-dark">
+      <li class="paper paper-ink-dark"
+        data-on="click" data-eval-js="1"
+        data-params='{ "action":"load", "params": [ "./html/components/list/settings.html", ".columns.components.list", "1" ]}'>
         <i class="material-icons">settings</i>&nbsp;Settings
       </li>
-      <li class="paper paper-ink-dark">
+      <li class="paper paper-ink-dark"
+      data-on="click" data-eval-js="1"
+      data-params='{ "action":"load", "params": [ "./html/components/list/settings.html", ".columns.components.list", "1" ]}'>
         <i class="material-icons">wifi</i>&nbsp;Network
       </li>
-      <li class="paper paper-ink-dark">
+      <li class="paper paper-ink-dark"
+      data-on="click" data-eval-js="1"
+      data-params='{ "action":"load", "params": [ "./html/components/list/settings.html", ".columns.components.list", "1" ]}'>
         <i class="material-icons">account_circle</i>&nbsp;Accounts
       </li>
     </ul>
   </div>
 </div>
+
+<script>
+  $e.setActiveMenuItem( `[data-params*="./html/components/list.html"]` );
+</script>
