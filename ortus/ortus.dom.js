@@ -6,6 +6,28 @@
       }
     }
   } );
+
+  extend( Object ).with( {
+    flatten: function( obj ){
+      var output = {};
+      for( var i in obj ){
+        if( obj.hasOwnProperty( i ) ){
+          if( typeof obj[ i ] === "object" ){
+            var fl = Object.flatten( obj[ i ] );
+              for( var x in fl ){
+                if( fl.hasOwnProperty( x ) ){
+                  output[ i + "." + x ] = fl[ x ];
+                }
+              }
+          } else {
+            output[ i ] = obj[ i ];
+          }
+        }
+      }
+      return output;
+    }
+  } );
+
   extend( Node ).with( {
     addClass: function( className ){
       this.classList.add( className );
@@ -64,4 +86,14 @@
       return siblings;
     }
   } );
+
+  extend( HTMLInputElement ).with( {
+    toggle: function(){
+      if( this.type == "checkbox" ){
+        this.checked = !this.checked;
+        this.do( "change" );
+      }
+    }
+  } );
+
 } )();

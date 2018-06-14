@@ -1,0 +1,68 @@
+<div class="column cf-auto">
+  <ul class="list list-default">
+    <li class="paper paper-ink-dark"
+      data-on="click"
+      data-params='{ "action":"load", "params": [ "./html/components/list.html", ".columns.components.list", "1" ]}'>
+      <i class="material-icons">arrow_back</i>&nbsp;Settings
+    </li>
+    <li class="paper paper-ink-dark"
+      data-on="click"
+      data-params='{ "action":"toggle", "params": [ "#settings-developer-toggle" ] }'
+      >
+      <i class="material-icons">developer_mode</i>&nbsp;Enable developer mode
+      <input id="settings-developer-toggle" type="checkbox" class="pull-right checkbox checkbox-default action">
+    </li>
+    <li class="paper paper-ink-dark developer-options" data-inline-title="Device information" style="display: none">
+      <div class="cf-100">
+        <h4>Device information</h4>
+        <div class="flex">
+          <div class="cf-50">
+            <strong>Platform:</strong><br/><span id="platform"></span>
+          </div>
+          <div class="cf-50">
+            <strong>Version:</strong><br/><span id="appversion"></span>
+          </div>
+        </div>
+        <div class="flex">
+          <div class="cf-50">
+            <strong>Vendor:</strong><br/><span id="vendor"></span>
+          </div>
+          <div class="cf-50">
+            <strong>Online:</strong><br/><span id="online"></span>
+          </div>
+        </div>
+        <div class="flex">
+          <div class="cf-50">
+            <strong>Language:</strong><br/><span id="language"></span>
+          </div>
+          <div class="cf-50">
+            <strong>Languages:</strong><br/><span id="languages"></span>
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+<script>
+  function showDeveloperFields(){
+    if( window.device.settings.isDeveloper ){
+        $d.one( "#settings-developer-toggle" ).checked = window.device.settings.isDeveloper;
+        $d.one( "#platform" ).innerHTML = window.navigator.platform;
+        $d.one( "#appversion" ).innerHTML = window.navigator.appVersion;
+        $d.one( "#vendor" ).innerHTML = window.navigator.vendor;
+        $d.one( "#online" ).innerHTML = window.navigator.onLine;
+        $d.one( "#language" ).innerHTML = window.navigator.language;
+        $d.one( "#languages" ).innerHTML = window.navigator.languages;
+    }
+
+    $d.find( ".developer-options" ).forEach( ( node ) => {
+      window.device.settings.isDeveloper ? node.show() : node.hide();
+    } )
+  }
+  $d.one( "#settings-developer-toggle" ).on( "change", function( event ) {
+    window.device.settings.isDeveloper = this.checked;
+    window.device.update();
+    showDeveloperFields();
+  } )
+  showDeveloperFields();
+</script>

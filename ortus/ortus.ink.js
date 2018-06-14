@@ -39,7 +39,7 @@
     if( this.ink ){
       this.ink.remove();
     }
-
+    
     this.ink = this.appendChild( document.createElement( "div" ) );
     this.ink.className = "ink";
 

@@ -1,10 +1,10 @@
 .pull-left{
   float: left;
-  margin-right: auto;
+  margin-right: auto !important;
 }
 .pull-right{
   float: right;
-  margin-left: auto;
+  margin-left: auto !important;
 }
 .flex{
   display: flex;

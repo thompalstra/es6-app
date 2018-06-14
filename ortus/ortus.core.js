@@ -49,6 +49,16 @@
         this.events[ event.type ][ i ].call( this, event );
         if( event.defaultPrevented ){ break; }
       }
+    },
+    template( template, object ){
+      var fl = Object.flatten( object );
+      for( var i in fl ){
+        template = template.replace(
+          new RegExp( "{" + i + "}", "g" ),
+          fl[ i ]
+        );
+      }
+      return template;
     }
   }, true );
   extend( Node ).with( {
@@ -64,6 +74,7 @@
           this.addEventListener( eventType, b );
         } else if( typeof b === "string" && typeof c === "function" ){
           this.addEventListener( eventType, ( originalEvent ) => {
+
             var closest;
 
             if( originalEvent.target instanceof Document ){

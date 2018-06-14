@@ -27,13 +27,20 @@
   transition: var(--transition-default);
   cursor: pointer;
 }
+.list.list-default > li[disabled]{
+  cursor: not-allowed;
+}
 
-.list.list-default > li{
+.list.list-default > li:not([disabled]){
   background-color: var(--dark-transparent);
 }
-.list.list-default > li:hover{
+.list.list-default > li:not([disabled]):hover{
   background-color: var(--dark-transparent-hover);
 }
-.list.list-default > li:active{
+.list.list-default > li:not([disabled]):active{
   background-color: var(--dark-transparent-active);
+}
+
+.list.list-default > li h4{
+  margin: 0 0 1rem 0;
 }

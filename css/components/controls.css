@@ -169,7 +169,6 @@ input[type="checkbox"].checkbox.checkbox-default.info:checked:after{
 
 
 input[type="checkbox"].checkbox.checkbox-switch{
-
 	position: relative;
 
 	-webkit-appearance: none;
@@ -220,16 +219,67 @@ input[type="checkbox"].checkbox.checkbox-switch:checked:before{
 	background-color: #555;
 }
 
-input[type="checkbox"].checkbox.checkbox-switch.action:after{
-	background-color: #999;
-}
 input[type="checkbox"].checkbox.checkbox-switch.action:checked:after{
 	background-color: var(--action);
 }
 
-input[type="checkbox"].checkbox.checkbox-switch.info:after{
-	background-color: #999;
-}
 input[type="checkbox"].checkbox.checkbox-switch.info:checked:after{
 	background-color: var(--info);
+}
+
+
+input[type="range"].range.range-default{
+	position: relative;
+
+	-webkit-appearance: none;
+	appearance: none;
+
+	margin: 0;
+	padding: 0;
+	height: 36px;
+	width: 100%;
+	outline: 0;
+}
+
+input[type="range"].range.range-default::-webkit-slider-thumb{
+	content: attr( value );
+	position: relative;
+	-webkit-appearance: none;
+  appearance: none;
+
+	width: 1rem;
+	height: 1rem;
+	background-color: var(--action);
+	border-radius: 40px;
+	z-index: 10;
+}
+
+input[type="range"].range.range-default:before{
+	content: "";
+	position: absolute;
+	display: inline-block;
+	top: 0;
+	left: .5rem;
+	bottom: 0;
+	right: .5rem;
+	height: 5px;
+	margin: auto 0;
+	z-index: 1;
+	background-color: #f2f2f2;
+}
+input[type="range"].range.range-default:hover:after,
+input[type="range"].range.range-default:active:after,
+input[type="range"].range.range-default:focus:after{
+	content: attr( value ) " - " attr( max );
+    position: absolute;
+    display: inline-block;
+    top: 50%;
+    left: 50%;
+    transform: translate( -50%, 50% );
+    margin: 0;
+    background-color: #333;
+    color: white;
+    padding: 2px 5px;
+    box-sizing: border-box;
+    border-radius: 2px;
 }

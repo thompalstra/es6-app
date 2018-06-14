@@ -1,4 +1,4 @@
 .column.content{ padding: 1rem; }
 .column.sidebar{ background-color: #222; }
 
-html, body{ overflow-y: scroll; background-color: #f2f2f2; }
+html, body{ overflow-y: auto; background-color: #f2f2f2; }

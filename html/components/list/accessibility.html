@@ -1,0 +1,38 @@
+<style></style>
+
+<div id="dialog-dialog"></div>
+
+<div class="column cf-auto">
+  <ul class="list list-default">
+    <li class="paper paper-ink-dark"
+      data-on="click"
+      data-params='{ "action":"load", "params": [ "./html/components/list.html", ".columns.components.list", "1" ]}'>
+      <i class="material-icons">arrow_back</i>&nbsp;Settings
+    </li>
+    <li id="accessibility-fontsize" class="paper paper-ink-dark"></li>
+  </ul>
+</div>
+
+
+<script>
+  $d.one( "#accessibility-fontsize" ).innerHTML = "Font size: " + window.device.accessibility.fontSize;
+  $d.one( "#accessibility-fontsize" ).on( "click", function ( event ) {
+    var fontSize = parseInt( window.device.accessibility.fontSize );
+    new Dialog( $d.one( "#dialog-dialog" ) )
+      .title( "Adjust fontsize" )
+      .content( `
+        <input type="range" name="window-device-accessibility-fontsize" class="range range-default" min="12" value="${fontSize}" max="32"></input>
+      ` )
+      .buttons( [
+        { "label": "Ok", "action": "confirm" },
+        { "label": "Cancel", "action": "dismiss" }
+      ] )
+      .show();
+  } );
+  $d.one( "#dialog-dialog" ).on( "confirm", ( e ) => {
+    window.device.accessibility.fontSize = $d.one( `[name="window-device-accessibility-fontsize"]` ).value + "px";
+    window.device.update();
+    window.device.setAccessibility();
+    $d.one( "#accessibility-fontsize" ).innerHTML = "Font size: " + window.device.accessibility.fontSize;
+  } )
+</script>
